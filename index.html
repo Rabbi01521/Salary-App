@@ -1,0 +1,90 @@
+<html>
+  <head>
+    <title>JS Dude Salary App2</title>
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
+    <script src="scripts/d3.js"></script>
+    <script src="scripts/nv.d3.js"></script>
+    <!-- <link rel="stylesheet" href="styles/bootstrap.css"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/nv.d3.css">
+    <link rel="stylesheet" href="scripts/jquery-ui-1.11.4/jquery-ui.min.css">
+    <style>
+		#chart{
+			height: 400px;
+		}
+		.dialog p{
+			font-size: 1.2em;
+		}
+		#dialog-last-item span{
+			font-size: 2em;
+		}
+		#dialog-error span{
+			font-size: 1.3em;
+		}
+		#dialog-record-count span{
+			font-size: 2.5em;
+		}
+    .hide{
+      display: none;
+    }
+    #recordCount{
+      margin-top: -15px;
+    }
+    </style>
+   
+    <script src="scripts/jquery-2.1.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <script src="scripts/jquery-ui-1.11.4/jquery-ui.min.js"></script>
+    <script defer src="./salaryData.js"></script>
+  	<script defer src="salaryApp.js"></script>
+    <script src="scripts/findEventHandlers.js"></script>
+  </head>
+  <body>
+    <div class="text-center">
+      <h1 class="text-primary"><strong>JS Dude Salary App</strong></h1>
+      <p>Salary, the Promised amount you never get</small>
+    </div>
+    <div class="form-inline text-center w-50 mx-auto">
+    	<div class="form-group">
+		    <input class="form-control mb-3" type='text' id='name' placeholder='Name'>
+		    <input class="form-control mb-3" type='text' id='salary' placeholder='Salary'>
+		    <button class="btn btn-success mb-3" id="AddRecord">Add Record</button>
+        <button type="button" class="btn btn-info mb-3" data-bs-toggle="modal" data-bs-target="#exampleModal" id="showLast">
+          Show Last
+        </button>
+		    <button class="btn btn-info mtop" id="recordCount">Record Count</button>
+    	</div>
+    </div>
+	
+	<div id="chart">
+    	<svg></svg>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade dialog" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" id="dialog-last-item" title="Last Item in the Chart">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel"></h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>Name: <span id="showName" class="text-success"></span></p>
+            <p>Salary: <span id="showSalary" class="text-success"></span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div id="dialog-error" class="hide dialog" title="Be careful Dude !" >
+      <p id="newNameLine">Name: <span id="newName" class="text-warning"></span></p>
+      <p id="newSalaryLine">Salary: <span id="newSalary" class="text-warning"></span></p>
+      <h2 class="text-danger">Your Boss is watching!</h2>
+    </div>
+
+	<div id="dialog-record-count" class="hide dialog" title="Number of Records" >
+	  <p>Record count: <span id="numberOfRecords" class="text-success"></span></p>	  
+	</div>
+  <h3 class="text-primary hide">Initial Count: <span id="initial-count"></span></h3>
+  </body>
+</html>  

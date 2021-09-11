@@ -52,7 +52,9 @@
         <button type="button" class="btn btn-info mb-3" data-bs-toggle="modal" data-bs-target="#exampleModal" id="showLast">
           Show Last
         </button>
-		    <button class="btn btn-info mtop" id="recordCount">Record Count</button>
+        <button id="recordCount" type="button" class="btn btn-info mtop" data-bs-toggle="modal" data-bs-target="#exampleModalCount">
+          Record Count
+        </button>
     	</div>
     </div>
 	
@@ -76,15 +78,28 @@
       </div>
     </div>
     
+    <!-- recordCount Modal -->
+    <div class="modal fade" id="exampleModalCount" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div id="dialog-record-count" class="hide dialog" title="Number of Records" >
+              <p>Record count: <span id="numberOfRecords" class="text-success"></span></p>  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div id="dialog-error" class="hide dialog" title="Be careful Dude !" >
       <p id="newNameLine">Name: <span id="newName" class="text-warning"></span></p>
       <p id="newSalaryLine">Salary: <span id="newSalary" class="text-warning"></span></p>
       <h2 class="text-danger">Your Boss is watching!</h2>
     </div>
 
-	<div id="dialog-record-count" class="hide dialog" title="Number of Records" >
-	  <p>Record count: <span id="numberOfRecords" class="text-success"></span></p>	  
-	</div>
   <h3 class="text-primary hide">Initial Count: <span id="initial-count"></span></h3>
   </body>
 </html>  

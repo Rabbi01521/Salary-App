@@ -85,9 +85,11 @@ function addRecordHandler() {
 
   if (!name || !salary) {
     showDataError(name, salary);
+    document.getElementById("name").value = "";
+    document.getElementById("salary").value = "";
     return;
   }
-
+  document.getElementById("dialog-error").classList.add("hide");
   addRecord(name, salary);
   document.getElementById("name").value = "";
   document.getElementById("salary").value = "";
